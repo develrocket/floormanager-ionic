@@ -1,0 +1,13 @@
+{
+  "name": "FloorManager",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.3.3"
+  },
+  "dependencies": {
+    "pdfmake": "^0.1.27",
+    "angular-pdf": "^1.5.1",
+    "ionic-datepicker": "^1.2.1",
+    "ionic-timepicker": "^0.6.0"
+  }
+}

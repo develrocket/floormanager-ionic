@@ -1,0 +1,56 @@
+<ion-view title="Settings" id="page10">
+    <ion-content padding="true" class="has-header">
+        <form id="settings-form10" class="list">
+
+            <div id="settings-button-bar1" ng-show="user.type == 100" class="button-bar">
+                <button id="settings-button11"
+                        class="button button-dark  button-block icon-left ion-android-add-circle">New Dist.
+                </button>
+                <a ui-sref="menu.createNewStore" id="settings-button13"
+                   class="button button-positive  button-block icon-right ion-android-add-circle">New Store</a>
+            </div>
+            <div class="list card" id="settings-card21" ng-show="user.type == 100">
+                <ion-item class="item-avatar" id="settings-list-item26" ui-sref="menu.ownerControlPanel"
+                          ng-show="user.type == 1">
+                    <img src="img/thumbnail-img.png">
+                    <h2>Owner Control Panel</h2>
+                    <p>Click To Open</p>
+                </ion-item>
+                <ion-item class="item-avatar" id="settings-list-item9" ng-repeat="item in stores"
+                          ng-click="viewStore(item)">
+                    <img src="{{item.photo}}">
+                    <h2>{{item.name}}</h2>
+                    <p>{{item.address}}</p>
+                </ion-item>
+                <form id="settings-form11" class="list">
+                    <label class="item item-select" id="settings-select9">
+                        <span class="input-label">Select</span>
+                        <select>
+                            <option>Edit Store / Dist. Profile</option>
+                            <option>View Store / Dist. Profile</option>
+                        </select>
+                    </label>
+                </form>
+            </div>
+
+            <label class="item item-input" id="settings-input13">
+                <span class="input-label">Name</span>
+                <input type="text" placeholder="" ng-model="user.name">
+            </label>
+            <label class="item item-input" id="settings-input15">
+                <span class="input-label">Email</span>
+                <input type="email" placeholder="" ng-model="user.email">
+            </label>
+            <label class="item item-input" id="settings-input17">
+                <span class="input-label">Password</span>
+                <input type="password" placeholder="" ng-model="user.password">
+            </label>
+            <label class="item item-select type-select" id="settings-select8">
+                <span class="input-label">Select</span>
+                <select ng-model="userType" ng-options="item.name disable when item.disabled for item in userTypes"
+                        ng-change="updateUserType(userType)"></select>
+            </label>
+        </form>
+        <button id="settings-button7" ng-click="save()" class="button button-positive  button-block">Save</button>
+    </ion-content>
+</ion-view>

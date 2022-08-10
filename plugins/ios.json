@@ -1,0 +1,52 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-camera": {
+            "CAMERA_USAGE_DESCRIPTION": " ",
+            "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "news.ctn.nextgen"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "news.ctn.nextgen"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "news.ctn.nextgen"
+        },
+        "cordova-plugin-email-composer": {
+            "PACKAGE_NAME": "news.ctn.nextgen"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "news.ctn.nextgen"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "news.ctn.nextgen"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "news.ctn.nextgen"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "news.ctn.nextgen"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "news.ctn.nextgen"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "news.ctn.nextgen"
+        },
+        "phonegap-plugin-barcodescanner": {
+            "CAMERA_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "news.ctn.nextgen"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "news.ctn.nextgen"
+        }
+    }
+}

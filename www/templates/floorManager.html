@@ -1,0 +1,48 @@
+<ion-view title="NEX-GEN FLOORING" hide-back-button="true" id="page1" style="background-color:#FFBD94;">
+    <ion-nav-bar class="bar-energized">
+        <ion-nav-buttons side="left">
+            <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content padding="false" scroll="false" class="has-header floorbg">
+        
+        
+        
+<div class="row responsive-sm">
+<div class="col-50">
+      
+  </div>
+    <div class="col-50 col-center">
+        <ion-card>
+        <ion-list>
+            <div class="select-store-box">
+                <p>Select Store</p>
+
+                <label class="item item-select type-select" id="signup-select1">
+                    <span class="input-label">Store</span>
+                    <select ng-model="mainStore" ng-options="item.name for item in stores"
+                            ng-change="updateMainStore(mainStore)"></select>
+                </label>
+            </div>
+        </ion-list>
+      </ion-card>
+    </div>
+  </div>
+        
+        
+        <div class="tabs tabs-icon-top tabs-positive" style="background: #e68500;">
+            <a class="tab-item" ui-sref="menu.addClient" ng-class="stores.length == 0 ? 'disabled' : ''">
+                <i class="icon ion-person-add"></i>
+                Add Client
+            </a>
+            <a class="tab-item" ui-sref="menu.addProduct"  ng-class="stores.length == 0 ? 'disabled' : ''">
+                <i class="icon ion-pricetags"></i>
+                Add Product
+            </a>
+            <a class="tab-item" ng-click="scan()"  ng-class="stores.length == 0 ? 'disabled' : ''">
+                <i class="icon ion-ios-camera"></i>
+                Camera
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

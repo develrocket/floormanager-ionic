@@ -1,0 +1,97 @@
+<ion-view title="Owner Control Panel" id="page14">
+    <ion-content padding="true" class="has-header">
+        <creator-map-component options="{}" marker="true" location="Madison Capital" zoom="12"
+                               style="display:block;position:relative;width:100%;height:300px;">
+            <ui-gmap-google-map ng-if="map.center" center="map.center" zoom="map.zoom" options="map.options">
+                <ui-gmap-marker coords="map.marker.coords" idkey="map.marker.id"
+                                options="map.marker.options"></ui-gmap-marker>
+            </ui-gmap-google-map>
+        </creator-map-component>
+        <div id="ownerControlPanel-button-bar12" class="button-bar">
+            <button id="ownerControlPanel-button24" class="button button-dark  button-block">Edit Stores</button>
+            <button id="ownerControlPanel-button27" class="button button-positive  button-block">Add Store</button>
+        </div>
+        <div class="list card" id="ownerControlPanel-card26">
+            <ion-item class="item-divider" id="ownerControlPanel-list-item-divider7"> LOCAL STORES</ion-item>
+            <ion-item class="item-avatar" id="ownerControlPanel-list-item10">
+                <h2>Store Name</h2>
+                <p>ID: XXX-XXXX</p>
+            </ion-item>
+            <form id="ownerControlPanel-form16" class="list">
+                <ion-toggle toggle-class="toggle-positive" id="ownerControlPanel-toggle9">STATISTICS</ion-toggle>
+                <ion-item class="item-avatar" id="ownerControlPanel-list-item15">
+                    <h2>Total Orders</h2>
+                </ion-item>
+                <ion-item class="item-avatar" id="ownerControlPanel-list-item19">
+                    <h2>Total Cost</h2>
+                </ion-item>
+                <ion-item class="item-avatar" id="ownerControlPanel-list-item17">
+                    <h2>Total Commissions</h2>
+                </ion-item>
+                <ion-item class="item-avatar" id="ownerControlPanel-list-item16">
+                    <h2>Net Profit</h2>
+                </ion-item>
+                <div class="spacer" style="width: 300px; height: 16px;"></div>
+            </form>
+            <form id="ownerControlPanel-form17" class="list">
+                <ion-toggle toggle-class="toggle-positive" id="ownerControlPanel-toggle10">Employees</ion-toggle>
+                <ion-item class="item-divider" id="ownerControlPanel-list-item-divider8"> Management</ion-item>
+                <ion-item class="item-avatar item-icon-right" id="ownerControlPanel-list-item11">
+                    <h2>First Last</h2>
+                    <p>ID: XXX-XXXX</p>
+                    <i class="icon ion-ios-telephone"></i>
+                </ion-item>
+                <ion-item class="range range-positive" id="ownerControlPanel-range1">Range
+                    <input type="range" value="50" min="0" max="100" step="1">
+                </ion-item>
+                <ion-item class="item-divider" id="ownerControlPanel-list-item-divider9"> Sales</ion-item>
+                <ion-item class="item-avatar item-icon-right" id="ownerControlPanel-list-item20">
+                    <h2>First Last</h2>
+                    <p>ID: XXX-XXXX</p>
+                    <i class="icon ion-ios-telephone"></i>
+                </ion-item>
+                <ion-item class="range range-positive" id="ownerControlPanel-range2">Range
+                    <input type="range" value="50" min="0" max="100" step="1">
+                </ion-item>
+                <div id="ownerControlPanel-button-bar9" class="button-bar">
+                    <button id="ownerControlPanel-button8"
+                            class="button button-dark  button-block icon-left ion-android-settings">Edit
+                    </button>
+                    <button id="ownerControlPanel-button9"
+                            class="button button-positive  button-block icon-right ion-android-add-circle">Add
+                    </button>
+                </div>
+                <div class="spacer" style="width: 300px; height: 30px;"></div>
+                <ion-item class="item-divider" id="ownerControlPanel-list-item-divider6"> Store Inventory</ion-item>
+                <ion-item class="item-avatar" id="ownerControlPanel-list-item12" ui-sref="menu.localStoreInventory">
+                    <h2>Entire Store Inventory</h2>
+                    <p>Click to view</p>
+                </ion-item>
+                <div id="ownerControlPanel-button-bar10" class="button-bar">
+                    <button id="ownerControlPanel-button10"
+                            class="button button-positive  button-block icon-left ion-android-list">Print List
+                    </button>
+                    <button id="ownerControlPanel-button12"
+                            class="button button-positive  button-block icon-left ion-qr-scanner">Print QR's
+                    </button>
+                </div>
+                <div class="spacer" style="width: 300px; height: 37px;"></div>
+                <div class="list card" id="ownerControlPanel-card211">
+                    <ion-item class="item-divider" id="ownerControlPanel-list-item-divider37"> Pending Approvals
+                    </ion-item>
+                    <ion-item class="item-avatar item-icon-right" id="ownerControlPanel-list-item60">
+                        <h2>Product Name</h2>
+                        <p>Cost / Markup Update by XXXXX</p>
+                        <i class="icon ion-android-checkbox-blank"></i>
+                    </ion-item>
+                    <ion-item class="item-avatar item-icon-right" id="ownerControlPanel-list-item62">
+                        <h2>New Sales Rep</h2>
+                        <p>Added by XXXXX</p>
+                        <i class="icon ion-android-checkbox-blank"></i>
+                    </ion-item>
+                </div>
+                <div class="spacer" style="height: 100px;"></div>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>

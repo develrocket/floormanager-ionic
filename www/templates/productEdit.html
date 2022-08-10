@@ -1,0 +1,85 @@
+<ion-view title="Edit Product">
+    <ion-content padding="true" class="has-header">
+        <div id="addProduct-container4">
+            <form id="addProduct-form8" class="list">
+                <label class="item item-input" id="addProduct-input14">
+                    <span class="input-label">Name</span>
+                    <input type="text" placeholder="" ng-model="product.name">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Distributor</span>
+                    <ion-select-autocomplete multi-select="false" output="product.distributor"
+                                             header="Choose Distributor" label-key="name" value-key="name"
+                                             options="distributors">
+                    </ion-select-autocomplete>
+                </label>
+                <label class="item item-input" id="addProduct-input16">
+                    <span class="input-label">Phone</span>
+                    <input type="text" placeholder="" ng-model="product.phone">
+                </label>
+                <label class="item item-select type-select" id="addProduct-select6">
+                    <span class="input-label">Material</span>
+                    <select ng-model="product.material" ng-options="item.name for item in materials"></select>
+                </label>
+                <label class="item item-select type-select" id="addProduct-select7">
+                    <span class="input-label">Project</span>
+                    <select ng-model="product.project" ng-options="item.name for item in projects"></select>
+                </label>
+            </form>
+        </div>
+        <form id="addProduct-form9" class="list">
+            <ion-toggle toggle-class="toggle-positive" id="addProduct-toggle3" ng-model="product.is_available">
+                Available
+            </ion-toggle>
+            <ion-toggle toggle-class="toggle-positive" id="addProduct-toggle5" ng-model="product.is_show_cost">Show Cost
+                &amp; Markup
+            </ion-toggle>
+            <label class="item item-input" ng-show="product.is_show_cost">
+                <span class="input-label">Cost</span>
+                <input type="text" placeholder="" ng-model="product.cost">
+            </label>
+            <label class="item item-select type-select" ng-show="product.is_show_cost">
+                <span class="input-label">Per</span>
+                <select ng-model="product.per" ng-options="item.name for item in perArray"></select>
+            </label>
+            <ion-item class="item-divider" ng-show="product.is_show_cost"> Mark up (%)
+            </ion-item>
+            <ion-item class="range range-positive" ng-show="product.is_show_cost">
+                <span>28</span>
+                <input type="range" value="50" min="28" max="50" step="1" ng-model="product.markup">
+                <span>50</span>
+            </ion-item>
+            <ion-toggle toggle-class="toggle-positive" ng-model="product.is_show_customSize">Show Custom Size
+            </ion-toggle>
+            <label class="item item-input" ng-show="product.is_show_customSize">
+                <span class="input-label">Length</span>
+                <input type="text" placeholder="" ng-model="product.length">
+            </label>
+            <label class="item item-input" ng-show="product.is_show_customSize">
+                <span class="input-label">Width</span>
+                <input type="text" placeholder="" ng-model="product.width">
+            </label>
+            <label class="item item-input" ng-show="product.is_show_customSize">
+                <span class="input-label">Coverage Area</span>
+                <input type="text" placeholder="" ng-model="product.coverage_area">
+            </label>
+            <ion-item class="item-divider" id="addProduct-list-item-divider4"> Photos</ion-item>
+            <div class="row" style="padding-left: 10px; padding-right: 10px;">
+                <div class="img-box" ng-repeat="item in product.photos">
+                    <img src="{{item}}">
+                </div>
+                <div>
+                    <button class="button btn-add-photo post-button" ng-click="addPhoto()">
+                        <i class="icon ion-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+        <p class="text-center">
+            Price:
+            <b style="font-size: 20px; color: red;">${{ getPrice() }}</b>
+        </p>
+        <button id="addProduct-button21" ng-click="updateProduct()" class="button button-positive  button-block">Save
+        </button>
+    </ion-content>
+</ion-view>

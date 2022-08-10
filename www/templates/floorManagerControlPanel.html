@@ -1,0 +1,113 @@
+<ion-view title="Floor Manager Control Panel" id="page16">
+    <ion-content padding="true" class="has-header">
+        <creator-map-component options="{}" marker="true" location="Madison Capital" zoom="12"
+                               style="display:block;position:relative;width:100%;height:300px;">
+            <ui-gmap-google-map ng-if="map.center" center="map.center" zoom="map.zoom" options="map.options">
+                <ui-gmap-marker coords="map.marker.coords" idkey="map.marker.id"
+                                options="map.marker.options"></ui-gmap-marker>
+            </ui-gmap-google-map>
+        </creator-map-component>
+        <div id="floorManagerControlPanel-button-bar13" class="button-bar">
+            <button id="floorManagerControlPanel-button15"
+                    class="button button-dark  button-block icon-left ion-android-checkbox-blank">Pending
+            </button>
+            <button id="floorManagerControlPanel-button16"
+                    class="button button-balanced  button-block icon-right ion-android-checkbox">Approved
+            </button>
+        </div>
+        <div class="list card" id="floorManagerControlPanel-card27">
+            <form id="floorManagerControlPanel-form24" class="list">
+                <ion-toggle toggle-class="toggle-positive" id="floorManagerControlPanel-toggle16">Clients</ion-toggle>
+                <label class="item item-select" id="floorManagerControlPanel-select10">
+                    <span class="input-label">Filter By State</span>
+                    <select></select>
+                </label>
+            </form>
+            <ion-item class="item-divider" id="floorManagerControlPanel-list-item-divider10"> Stores Pending Approvals
+            </ion-item>
+            <ion-item class="item-avatar item-icon-right" id="floorManagerControlPanel-list-item27"
+                      ui-sref="menu.storeProfile({})">
+                <h2>Store Name</h2>
+                <p>Pending Approval / Approved by XXXXX</p>
+                <i class="icon ion-android-checkbox-blank"></i>
+            </ion-item>
+            <ion-item class="item-divider" id="floorManagerControlPanel-list-item-divider14"> Distributors Pending
+                Approvals
+            </ion-item>
+            <ion-item class="item-avatar item-icon-right" id="floorManagerControlPanel-list-item35">
+                <h2>Distributor name</h2>
+                <p>Pending Approval / Approved by XXXXX</p>
+                <i class="icon ion-android-checkbox-blank"></i>
+            </ion-item>
+            <ion-item class="item-divider" id="floorManagerControlPanel-list-item-divider15"> Store Owners Pending
+                Approval
+            </ion-item>
+            <ion-item class="item-avatar item-icon-right" id="floorManagerControlPanel-list-item36">
+                <h2>Store Owner Name</h2>
+                <p>Pending Approval / Approved by XXXXX</p>
+                <i class="icon ion-android-checkbox-blank"></i>
+            </ion-item>
+            <ion-item class="item-divider" id="floorManagerControlPanel-list-item-divider16"> Store Manager Pending
+                Approval
+            </ion-item>
+            <ion-item class="item-avatar item-icon-right" id="floorManagerControlPanel-list-item37">
+                <h2>Store Manager</h2>
+                <p>Pending Approval / Approved by XXXXX</p>
+                <i class="icon ion-android-checkbox-blank"></i>
+            </ion-item>
+            <ion-item class="item-divider" id="floorManagerControlPanel-list-item-divider17"> Store Sales Pending
+                Approval
+            </ion-item>
+            <ion-item class="item-avatar item-icon-right" id="floorManagerControlPanel-list-item38">
+                <h2>Store Sales</h2>
+                <p>Pending Approval / Approved by XXXXX</p>
+                <i class="icon ion-android-checkbox-blank"></i>
+            </ion-item>
+            <ion-item class="item-divider" id="floorManagerControlPanel-list-item-divider18"> Distributor Rep Pending
+                Approval
+            </ion-item>
+            <ion-item class="item-avatar item-icon-right" id="floorManagerControlPanel-list-item39">
+                <h2>Distributor Rep</h2>
+                <p>Pending Approval / Approved by XXXXX</p>
+                <i class="icon ion-android-checkbox-blank"></i>
+            </ion-item>
+            <form id="floorManagerControlPanel-form23" class="list">
+                <div id="floorManagerControlPanel-button-bar14" class="button-bar"></div>
+                <div id="floorManagerControlPanel-button-bar15" class="button-bar"></div>
+                <div class="spacer" style="width: 300px; height: 30px;"></div>
+            </form>
+        </div>
+        <div class="list card" id="floorManagerControlPanel-card28">
+            <form id="floorManagerControlPanel-form25" class="list">
+                <ion-toggle toggle-class="toggle-positive" id="floorManagerControlPanel-toggle17">Product</ion-toggle>
+            </form>
+            <ion-item class="item-divider" id="floorManagerControlPanel-list-item-divider19"> New Product Pending
+                Approvals
+            </ion-item>
+            <ion-item class="item-avatar item-icon-right" id="floorManagerControlPanel-list-item40">
+                <h2>Product Name</h2>
+                <p>Created by: / Approved by:</p>
+                <i class="icon ion-android-checkbox-blank"></i>
+            </ion-item>
+            <ion-item class="item-divider" id="floorManagerControlPanel-list-item-divider28"> Product Update Approvals
+            </ion-item>
+            <ion-item class="item-avatar item-icon-right" id="floorManagerControlPanel-list-item49">
+                <h2>Product Name</h2>
+                <p>Updated by: / Approved by:</p>
+                <i class="icon ion-android-checkbox-blank"></i>
+            </ion-item>
+            <form id="floorManagerControlPanel-form27" class="list">
+                <div id="floorManagerControlPanel-button-bar16" class="button-bar"></div>
+                <div id="floorManagerControlPanel-button-bar17" class="button-bar">
+                    <button id="floorManagerControlPanel-button35"
+                            class="button button-positive  button-block icon-left ion-android-list">Export All
+                    </button>
+                    <button id="floorManagerControlPanel-button36"
+                            class="button button-positive  button-block icon-left ion-qr-scanner">Print QR's
+                    </button>
+                </div>
+                <div class="spacer" style="height: 100px;"></div>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,39 @@
+<ion-view title="Signup" hide-nav-bar="true" id="page5">
+    <ion-content padding="true"
+                 style="background: url(img/9D21UOjASMquX0kuWD1C_tasty-wholesale-hardwood-flooring-for-sale-for-wood-floor-hardwood-flooring-wholesale-1024x683.jpg) no-repeat center;background-size:cover;"
+                 class="manual-ios-statusbar-padding"
+                 scroll="false">
+        <form id="signup-form2" class="list center-form">
+            <ion-list id="signup-list3">
+                <label class="item item-input top-input" id="signup-input3">
+                    <span class="input-label">Username</span>
+                    <input type="text" placeholder="" ng-model="authData.name">
+                </label>
+                <label class="item item-input email-input" id="signup-input5">
+                    <span class="input-label">Email</span>
+                    <input type="email" placeholder="" ng-model="authData.email" autocapitalize="none">
+                </label>
+                <label class="item item-select type-select" id="signup-select1">
+                    <span class="input-label">Select</span>
+                    <select ng-model="userType" ng-options="item.name disable when item.disabled for item in userTypes"
+                            ng-change="updateUserType(userType)" style="background: none;"></select>
+                </label>
+                <label class="item item-select type-select">
+                    <span class="input-label">Store</span>
+                    <select ng-model="mainStore" ng-options="item.name for item in stores"
+                            ng-change="updateUserStore(mainStore)" style="background: none;"></select>
+                </label>
+                <label class="item item-input bottom-input">
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder="" ng-model="authData.password" pattern="[0-9]*"
+                           inputmode="numeric">
+                </label>
+            </ion-list>
+            <div class="spacer" style="height: 40px;"></div>
+            <button id="signup-button3" ng-click="doSignUp()" class="button button-positive  button-block">Sign up
+            </button>
+            <a ui-sref="menu.login" id="signup-button4" class="button button-light  button-block button-clear">Already
+                have an account?</a>
+        </form>
+    </ion-content>
+</ion-view>

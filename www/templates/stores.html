@@ -1,0 +1,18 @@
+<ion-view title="Stores" id="page21">
+  <ion-nav-buttons side="right" class="has-header">
+    <button class="button button-icon icon No Icon" ng-click="addProduct()"> Add</button>
+  </ion-nav-buttons>
+  <ion-content padding="true" class="has-header">
+    <form id="stores-form33" class="list">
+      <label class="item item-input" id="stores-search4">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="">
+      </label>
+      <ion-item class="item-avatar item-icon-right" id="stores-list-item33" ng-repeat="item in stores" ng-click="chooseItem(item)">
+        <h2>{{item.name}}</h2>
+        <p>{{item.address}}</p>
+        <i class="icon ion-ios-checkmark-empty" ng-show="item.is_selected"></i>
+      </ion-item>
+    </form>
+  </ion-content>
+</ion-view>

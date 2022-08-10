@@ -1,0 +1,11 @@
+<ion-view title="Order list" id="page7">
+    <ion-content padding="true" class="has-header">
+        <ion-list>
+            <ion-item class="item-avatar item-icon-right" ng-repeat="item in orders" ng-click="viewOrder(item)">
+                <img src="img/customer_order_status.PNG">
+                <h2>Order #: {{item.$id}} </h2>
+                <p>Created At: {{item.created_at}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

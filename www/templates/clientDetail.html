@@ -1,0 +1,70 @@
+<ion-view title="{{client.name}}" id="page11">
+    <ion-content padding="true" class="has-header">
+        <ion-list id="clientDetail-list8">
+            <ion-item class="item-avatar">
+                <img src="img/TRjIh5RTXOIXnGdRizDg_images.png">
+                <h2>{{client.name}}</h2>
+                <p>
+                    <i class="icon ion-email"></i>&nbsp; {{client.email}}</p>
+                <p>
+                    <i class="icon ion-ios-telephone"></i>&nbsp; {{client.phone}}
+                </p>
+            </ion-item>
+        </ion-list>
+        <div id="clientDetail-button-bar2" class="button-bar">
+            <button id="clientDetail-button17"
+                    class="button button-dark button-large button-block icon-left ion-android-settings"
+                    ng-click="editProduct()">Edit Products
+            </button>
+            <button id="clientDetail-button22"
+                    class="button button-positive button-large button-block icon-right ion-android-settings" ng-click="editProject()">Edit
+                Projects
+            </button>
+        </div>
+        <div class="row item-divider">
+            <div class="col text-center" style="border-right: 1px solid #ddd">
+                PRODUCTS
+            </div>
+            <div class="col text-center">
+                PROJECTS
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center" style="border-right: 1px solid #ddd;">
+                <span ng-show="products.length == 0">No Items</span>
+                <ion-item class="no-border" ng-repeat="item in products">
+                    {{item.name}} ({{client.products[item.$id]}})
+                </ion-item>
+            </div>
+            <div class="col">
+                <ion-item class="item-icon-left no-border" ng-repeat="item in client.projects">
+                    <i class="icon ion-android-checkbox-outline"></i>{{item.name}}
+                </ion-item>
+            </div>
+        </div>
+        <label class="item item-input">
+            <span class="input-label">Total Price:</span>
+            <input type="text" placeholder="$00.00" readonly ng-model="productTotalPrice">
+        </label>
+        <div class="spacer" style="width: 300px; height: 27px;"></div>
+        <div class="list card" id="clientDetail-card24">
+            <ion-item class="item-avatar item-icon-right" id="clientDetail-list-item18" ng-repeat="item in orders" ng-click="viewOrder(item)">
+                <img src="http://nex-gen-flooring.com/webapp-images/forklift.jpg">
+                <h2>Order #: {{item.$id}} </h2>
+                <p>Created At: {{item.created_at}}</p>
+            </ion-item>
+            <label class="item item-input" id="clientDetail-input28">
+                <span class="input-label">Total Price:</span>
+                <input type="text" placeholder="$00.00" ng-model="orderTotalPrice" readonly>
+            </label>
+        </div>
+
+        <form id="clientDetail-form21" class="list">
+            <div id="clientDetail-button-bar6" class="button-bar">
+                <button id="clientDetail-button32" class="button button-balanced button-large button-block" ng-click="createOrder()">
+                    Generate An Order
+                </button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

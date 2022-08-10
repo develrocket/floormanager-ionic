@@ -1,0 +1,9 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">Products</h1>
+        <button ng-click="hideModal()" class="button button-icon icon ion-android-close"></button>
+    </ion-header-bar>
+    <ion-content>
+        <ng-pdf ng-if="pdfUrl" template-url="templates/viewer.html" canvasid="pdf" scale="page-fit"></ng-pdf>
+    </ion-content>
+</ion-modal-view>

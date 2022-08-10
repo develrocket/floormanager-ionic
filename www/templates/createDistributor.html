@@ -1,0 +1,76 @@
+<ion-view title="Create New Distributor" id="page18">
+    <ion-content padding="true" class="has-header">
+        <div id="createNewStore-container9" class="top-image-box">
+            <div>
+                <img src="img/HqacYlfBSRSOooiw2Ert_no-image-icon-13.png"
+                     style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;"
+                     ng-src="{{distributor.photo}}">
+            </div>
+            <div id="createNewStore-container10" class="control-box">
+                <div class="spacer" style="width: 300px; height: 76px;"></div>
+                <button id="createNewStore-button28"
+                        class="button button-dark  button-clear icon ion-android-camera photo-icon-button" ng-click="addPhoto()"></button>
+            </div>
+        </div>
+        <div class="list card" id="createNewStore-card212">
+            <label class="item item-input">
+                <span class="input-label">Email:</span>
+                <input type="text" placeholder="Email" ng-model="distributor.email">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Password:</span>
+                <input type="password" placeholder="Password" ng-model="distributor.password"/>
+            </label>
+            <ion-checkbox ng-model="distributor.by_store">Managed by Store</ion-checkbox>
+            <ion-checkbox ng-model="distributor.by_manufacturer">Managed by Manufacturer</ion-checkbox>
+            <label class="item item-input">
+                <span class="input-label">Name:</span>
+                <input type="text" placeholder="Name" ng-model="distributor.name">
+            </label>
+            <label class="item item-input" id="createNewStore-input27">
+                <span class="input-label">Phone #</span>
+                <input type="text" placeholder="(XXX) XXX-XXXX" ui-mask="(999) 999-9999" ng-model="distributor.phone">
+            </label>
+            <label class="item item-input" id="createNewStore-input23">
+                <span class="input-label">Address:</span>
+                <input type="text" placeholder="777 Heaven Way" ng-model="distributor.address">
+            </label>
+            <label class="item item-input" id="createNewStore-input24">
+                <span class="input-label">City:</span>
+                <input type="text" placeholder="CIty" ng-model="distributor.city">
+            </label>
+            <label class="item item-input" id="createNewStore-input25">
+                <span class="input-label">State:</span>
+                <input type="text" placeholder="State" ng-model="distributor.state">
+            </label>
+            <label class="item item-input" id="createNewStore-input26">
+                <span class="input-label">Zip:</span>
+                <input type="text" placeholder="XXXXX" ng-model="distributor.zip">
+            </label>
+        </div>
+        <ion-list>
+            <ion-toggle toggle-class="toggle-positive" id="createNewStore-toggle15" ng-model="showEmployees">
+                Employees
+            </ion-toggle>
+            <ion-item class="item-avatar item-icon-right" id="createNewStore-list-item32"
+                      ng-repeat="item in employees" ng-show="showEmployees">
+                <img src="img/TRjIh5RTXOIXnGdRizDg_images.png">
+                <h2>{{item.name}}</h2>
+                <p>{{item.email}}</p>
+                <i class="icon ion-ios-telephone"></i>
+                <ion-option-button class="button-assertive" ng-click="removeItem($index)">Delete</ion-option-button>
+            </ion-item>
+            <div id="createNewStore-button-bar24" ng-show="showEmployees" class="button-bar">
+                <button id="createNewStore-button20"
+                        class="button button-dark  button-block icon-left ion-android-settings">Edit
+                </button>
+                <a ui-sref="menu.distributor_employees" id="createNewStore-button26"
+                   class="button button-positive  button-block icon-right ion-android-add-circle">Add </a>
+            </div>
+            <div class="spacer" style="width: 300px; height: 30px;"></div>
+            <button id="createNewStore-button33" ng-click="addNew()" class="button button-positive  button-block">
+                Save
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-view>

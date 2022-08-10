@@ -1,0 +1,42 @@
+<ion-view title="Add Client" id="page2">
+    <ion-content padding="true" class="has-header">
+        <form id="addClient-form4" class="list">
+            <ion-item class="item-divider" id="addClient-list-item-divider2"> Information</ion-item>
+            <label class="item item-input" id="addClient-input8">
+                <span class="input-label">Name</span>
+                <input type="text" placeholder="" ng-model="client.name">
+            </label>
+            <label class="item item-input" id="addClient-input9">
+                <span class="input-label">Phone</span>
+                <input type="text" placeholder="(XXX) XXX-XXXX" ui-mask="(999) 999-9999" ng-model="client.phone">
+            </label>
+            <label class="item item-input" id="addClient-input10">
+                <span class="input-label">Email</span>
+                <input type="email" placeholder="" ng-model="client.email">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Password</span>
+                <input type="password" placeholder="" ng-model="client.password">
+            </label>
+            <label class="item item-input" id="addClient-input11">
+                <span class="input-label">Address</span>
+                <input type="text" placeholder="" ng-model="client.address">
+            </label>
+            <ion-checkbox id="addClient-checkbox1" ng-model="client.is_same">Project address is same</ion-checkbox>
+            <ion-item class="item-divider" id="addClient-list-item-divider1"> Projects</ion-item>
+            <ion-list>
+                <ion-item class="item item-select" ng-repeat="modelItem in client.projects track by $index">
+                    <span class="input-label">Select</span>
+                    <select ng-model="modelItem" ng-options="item.name for item in projects"
+                            ng-change="updateProjectType(modelItem, $index)"></select>
+                    <ion-option-button class="button-assertive" ng-click="deleteProject($index)">Delete</ion-option-button>
+                </ion-item>
+            </ion-list>
+            <button id="addClient-button18" ng-click="addProject()"
+                    class="button button-positive  button-block button-clear">+ Add Project
+            </button>
+            <button id="addClient-button19" ng-click="addClient()" class="button button-positive  button-block">Submit
+            </button>
+        </form>
+    </ion-content>
+</ion-view>

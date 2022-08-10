@@ -1,0 +1,56 @@
+<ion-view title="Distributor Control Panel" id="page17">
+    <ion-content padding="true" class="has-header">
+        <div id="distributorControlPanel-button-bar18" class="button-bar">
+            <button id="distributorControlPanel-button37"
+                    class="button button-dark  button-block icon-left"
+                    ng-class="distributor.is_verified ? 'ion-android-checkbox-blank' : 'ion-android-checkbox'">Pending
+            </button>
+            <button id="distributorControlPanel-button38"
+                    class="button button-balanced  button-block icon-right"
+                    ng-class="distributor.is_verified ? 'ion-android-checkbox' : 'ion-android-checkbox-blank'">Approved
+            </button>
+        </div>
+        <div class="list card" id="distributorControlPanel-card29">
+            <ion-item class="item-divider" id="distributorControlPanel-list-item-divider34"> Distributor Rep Pending
+                Approval
+            </ion-item>
+            <ion-item class="item-avatar item-icon-right" id="distributorControlPanel-list-item55">
+                <h2>Distributor Rep</h2>
+                <p>Pending Approval / Approved by XXXXX</p>
+                <i class="icon ion-android-checkbox-blank"></i>
+            </ion-item>
+        </div>
+        <div class="list card" id="distributorControlPanel-card210">
+            <form id="distributorControlPanel-form30" class="list">
+                <ion-toggle toggle-class="toggle-positive" id="distributorControlPanel-toggle20">Product</ion-toggle>
+            </form>
+            <ion-item class="item-divider" id="distributorControlPanel-list-item-divider35"> New Product Pending
+                Approvals
+            </ion-item>
+            <ion-item class="item-avatar item-icon-right" id="distributorControlPanel-list-item56">
+                <h2>Product Name</h2>
+                <p>Created by: / Approved by:</p>
+                <i class="icon ion-android-checkbox-blank"></i>
+            </ion-item>
+            <ion-item class="item-divider" id="distributorControlPanel-list-item-divider36"> Product Update Approvals
+            </ion-item>
+            <ion-item class="item-avatar item-icon-right" id="distributorControlPanel-list-item57">
+                <h2>Product Name</h2>
+                <p>Updated by: / Approved by:</p>
+                <i class="icon ion-android-checkbox-blank"></i>
+            </ion-item>
+            <form id="distributorControlPanel-form31" class="list">
+                <div id="distributorControlPanel-button-bar21" class="button-bar"></div>
+                <div id="distributorControlPanel-button-bar22" class="button-bar">
+                    <button id="distributorControlPanel-button40"
+                            class="button button-positive  button-block icon-left ion-android-list">Export All
+                    </button>
+                    <button id="distributorControlPanel-button42"
+                            class="button button-positive  button-block icon-left ion-qr-scanner">Print QR's
+                    </button>
+                </div>
+                <div class="spacer" style="height: 100px;"></div>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>

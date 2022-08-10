@@ -1,0 +1,419 @@
+$energized: #FF9400;
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+<<<<<<< HEAD
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+=======
+@import "www/lib/ionic/scss/ionic";
+>>>>>>> 5d2cb6dad48eab8602bf57afc96109a537547650
+.center-form {
+	width: 290px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	label {
+		background-color: rgba(255, 255, 255, 0.7);
+		border-color: rgba(255, 255, 255, 0);
+		&.top-input {
+			border-radius: 4px 4px 0px 0px;
+		}
+		
+		&.bottom-input {
+			border-radius: 0px 0px 4px 4px;
+		}
+		
+	}
+	.button-positive {
+		opacity: 0.9;
+	}
+	
+}
+.type-select {
+	height: 49px;
+	line-height: 49px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	& .input-label {
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+}
+.center-image {
+	width: 290px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.img-box img {
+	width: 52px;
+	height: 40px;
+}
+
+.img-box {
+	display: inline-block;
+	margin-right: 5px;
+	border-radius: 5px;
+}
+
+.margin-vertical-zero {
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+}
+
+.margin-bottom-zero {
+	margin-bottom: 0px !important;
+}
+
+.item-thumbnail-left, .item-thumbnail-left .item-content {
+	padding-bottom: 8px;
+}
+
+.email-input {
+	text-transform: lowercase;
+}
+
+.back-button {
+	&:before {
+		font-size: 24px !important;
+	}
+}
+
+.quantity-box {
+	.button {
+		color: black;
+		border: 1px solid #bababa;
+		float: left;
+	}
+
+	input {
+		float: left;
+		width: 50px;
+		height: 47px;
+		border: 1px solid #bababa;
+	}
+}
+
+
+.top-image-box {
+	width: 100%;
+	position: relative;
+	height: 200px;
+	overflow: hidden;
+	border: 1px solid #ddd;
+
+	img {
+		height: 100%;
+		width: auto;
+	}
+
+	.control-box {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		background: rgba(0, 0, 0, 0.2);
+		top: 0px;
+		left: 0px;
+		text-align: center;
+
+
+		button:before {
+			font-size: 45px;
+		}
+	}
+}
+.select-store-box {
+	position: absolute;
+	top: 30px;
+	width: calc(100% - 30px);
+	left: 15px;
+
+	p {
+		color: white;
+		font-weight: bold;
+		font-size: 20px;
+	}
+}
+
+p.description {
+	padding-left: 16px;
+	background: rgba(51, 51, 51, 0.1);
+}
+
+.picker-button {
+	margin-top: -47px !important;
+	z-index: 100000;
+	background: none;
+	border: none;
+	outline: none;
+	margin-bottom: 0px !important;
+
+	&.activated {
+		border: none;
+		outline: none;
+		background: none;
+	}
+}
+
+.tracking-bar {
+
+	label {
+		width: 87px;
+		padding: 0px;
+		height: 50px;
+		font-size: 12px;
+		line-height: 50px;
+		text-align: center;
+		float: left;
+		color: white;
+		border-radius: 5px;
+		margin-bottom: 10px;
+
+		&.danger {
+			background: rgba(255, 0, 0, 0.7);
+		}
+
+		&.default {
+			background: rgba(51, 51, 51, 0.5);
+		}
+
+		&.info {
+			background: #f9c904;
+		}
+
+		&.positive {
+			background: #387ef5;
+		}
+
+		&.balance {
+			background: #33cd5f;
+		}
+	}
+
+	.icon {
+		line-height: 50px;
+		margin-left: 5px;
+		margin-right: 5px;
+		font-size: 25px;
+		float: left;
+
+		&.danger {
+			color: rgba(255, 0, 0, 0.7);
+		}
+
+		&.default {
+			color: rgba(51, 51, 51, 0.5);
+		}
+
+		&.info {
+			color: #f9c904;
+		}
+
+		&.positive {
+			color: #387ef5;
+		}
+
+		&.balance {
+			color: #33cd5f;
+		}
+	}
+}
+
+.floorbg {
+	background-image: url("../img/XkLJyIQ3SYWBYFprAVo9_3DWoodPerspectiveShelfiPhone6PlusHDWallpaper.jpg") !important;
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+	background-position: 50% 50% !important;
+}
+
+<<<<<<< HEAD
+=======
+input {
+	padding: 5px;
+	margin-bottom: 10px;
+	outline: none;
+	font: 20px sans-serif;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+>>>>>>> 5d2cb6dad48eab8602bf57afc96109a537547650
+.StepProgress {
+	position: relative;
+	padding-left: 45px;
+	list-style: none;
+
+	&::before {
+		display: inline-block;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 15px;
+		width: 10px;
+		height: 100%;
+		border-left: 2px solid #CCC;
+	}
+
+	&-item {
+		position: relative;
+		counter-increment: list;
+
+		&:not(:last-child) {
+			padding-bottom: 20px;
+		}
+
+		&::before {
+			display: inline-block;
+			content: '';
+			position: absolute;
+			left: -30px;
+			height: 100%;
+			width: 10px;
+		}
+
+		&::after {
+			content: '';
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			left: -37px;
+			width: 15px;
+			height: 15px;
+			border: 2px solid #CCC;
+			border-radius: 50%;
+			background-color: #FFF;
+		}
+
+		&.is-done {
+			&::before {
+				border-left: 2px solid green;
+			}
+			&::after {
+				content: "✔";
+				font-size: 10px;
+				color: #FFF;
+				text-align: center;
+				border: 2px solid green;
+				background-color: green;
+				line-height: 11px;
+			}
+		}
+
+		&.current {
+			&::before {
+				border-left: 2px solid green;
+			}
+
+			&::after {
+				content: counter(list);
+				padding-top: 1px;
+				width: 23px;
+				height: 23px;
+				top: -4px;
+				left: -40px;
+				font-size: 14px;
+				text-align: center;
+				color: green;
+				border: 2px solid green;
+				background-color: white;
+			}
+		}
+	}
+
+	strong {
+		display: block;
+	}
+<<<<<<< HEAD
+}
+=======
+}
+.item-thumbnail-left, .item-thumbnail-left .item-content {
+	padding-bottom: 0px;
+}
+
+
+.back-button:before {
+	font-size: 24px !important; }
+
+.quantity-box {
+	.button {
+		color: black;
+		border: 1px solid #bababa;
+		float: left;
+	}
+
+	input {
+		float: left;
+		width: 50px;
+		height: 47px;
+		border: 1px solid #bababa;
+	}
+}
+
+.top-image-box {
+	width: 100%;
+	position: relative;
+	height: 200px;
+	overflow: hidden;
+	border: 1px solid #ddd;
+
+	img {
+		height: 100%;
+		width: auto;
+	}
+
+	.control-box {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		background: rgba(0, 0, 0, 0.2);
+		top: 0px;
+		left: 0px;
+		text-align: center;
+
+		button:before {
+			font-size: 45px;
+		}
+	}
+}
+
+.select-store-box {
+	position: absolute;
+	top: 30px;
+	width: calc(100% - 30px);
+	left: 15px;
+
+	p {
+		color: white;
+		font-weight: bold;
+		font-size: 20px;
+	}
+
+}
+
+p.description {
+	padding-left: 16px;
+	background: rgba(51, 51, 51, 0.1); }
+
+.picker-button {
+	margin-top: -47px !important;
+	z-index: 100000;
+	background: none;
+	border: none;
+	outline: none;
+	margin-bottom: 0px !important; }
+.picker-button.activated {
+	border: none;
+	outline: none;
+	background: none; }
+
+.floorbg {
+	background-image: url("../img/XkLJyIQ3SYWBYFprAVo9_3DWoodPerspectiveShelfiPhone6PlusHDWallpaper.jpg") !important;
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+	background-position: 50% 50% !important; }
+>>>>>>> 5d2cb6dad48eab8602bf57afc96109a537547650

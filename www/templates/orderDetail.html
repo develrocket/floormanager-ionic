@@ -1,0 +1,378 @@
+<ion-view title="{{client.name}}" id="page13">
+    <ion-content padding="true" class="has-header">
+        <ion-list id="orderDetail-list9">
+            <ion-item class="item-avatar">
+                <img src="img/TRjIh5RTXOIXnGdRizDg_images.png">
+                <h2>{{client.name}}</h2>
+                <p>
+                    <i class="icon ion-email"></i>&nbsp; {{client.email}}</p>
+                <p>
+                    <i class="icon ion-ios-telephone"></i>&nbsp; {{client.phone}}
+                </p>
+            </ion-item>
+        </ion-list>
+        <div class="spacer" style="width: 300px; height: 27px;"></div>
+
+        <div class="list">
+            <div class="item item-divider">
+                Active Step
+            </div>
+        </div>
+        <div class="wrapper">
+            <ul class="StepProgress">
+                <li class="StepProgress-item" ng-class="order.step > 1 ? 'is-done' : 'current'">
+                    <strong>Step 1</strong>
+                    <div ng-show="order.step == 1">
+                        <div ng-show="authUser.type == 100 || authUser.type <= 3" style="margin-top: 10px;">
+                            <div class="list">
+                                <div class="item item-icon-left">
+                                    <i class="icon ion-ios-calendar"></i>
+                                    Order Date
+                                    <span class="item-note">
+                                    {{order.created_at}}
+                                </span>
+                                </div>
+                            </div>
+                            <button class="button button-positive button-block icon-left ion-ios-camera" ng-click="attachInvoice()">
+                                Attach Paid Invoice
+                            </button>
+                            <button class="button button-positive button-block icon-left ion-ios-chatboxes">
+                                View Chat History
+                            </button>
+                            <button class="button button-dark button-block icon-left ion-android-microphone">
+                                Call ({{client.phone}})
+                            </button>
+                            <button class="button button-dark button-block icon-left ion-plus-circled">
+                                Invite Installer
+                            </button>
+                        </div>
+
+                        <div ng-show="authUser.type == 7" style="margin-top: 10px;">
+                            <div class="list">
+                                <div class="item item-icon-left">
+                                    <i class="icon ion-ios-calendar"></i>
+                                    Order Date
+                                    <span class="item-note">
+                                    {{order.created_at}}
+                                </span>
+                                </div>
+                                <div class="item item-text-wrap">
+                                    <p>Thank you for your patience, you will be notified shortly with Tracking Information.</p>
+                                </div>
+                            </div>
+                            <button class="button button-positive button-block icon-left ion-ios-chatboxes">
+                                View Chat History
+                            </button>
+                        </div>
+
+                        <div ng-show="authUser.type == 4" style="margin-top: 10px;">
+                            <div class="list">
+                                <div class="item item-icon-left">
+                                    <i class="icon ion-ios-calendar"></i>
+                                    Order Date
+                                    <span class="item-note">
+                                    {{order.created_at}}
+                                </span>
+                                </div>
+                                <ion-toggle toggle-class="toggle-positive" ng-model="showEnterTracking">Enter Tracking</ion-toggle>
+                                <div class="item item-divider" ng-show="showEnterTracking">
+                                    Tracking Update
+                                </div>
+                                <label class="item item-input" ng-show="showEnterTracking">
+                                    <span class="input-label">Tracking #</span>
+                                    <input type="text" placeholder="" ng-model="trackingNumber">
+                                </label>
+                            </div>
+                            <button class="button button-dark button-block icon-left ion-ios-cloud-upload" ng-click="updateTracking(trackingNumber)">
+                                Update Tracking
+                            </button>
+                            <button class="button button-positive button-block icon-left ion-ios-chatboxes">
+                                View Chat History
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li class="StepProgress-item" ng-class="order.step > 2 ? 'is-done' : (order.step == 2 ? 'current' : '')">
+                    <strong>Step 2</strong>
+                    <div ng-show="order.step == 2">
+                        <div ng-show="authUser.type == 100 || authUser.type <= 3" style="margin-top: 10px;">
+                            <div class="list">
+                                <div class="item item-icon-left">
+                                    <i class="icon ion-ios-calendar"></i>
+                                    Order Date
+                                    <span class="item-note">
+                                        {{order.created_at}}
+                                    </span>
+                                </div>
+                                <ion-toggle toggle-class="toggle-positive" ng-model="viewInvoice">View Paid Invoice</ion-toggle>
+                                <div class="item" ng-show="viewInvoice">
+                                    <img class="full-image" src="{{tracker[1].invoice}}">
+                                </div>
+                            </div>
+                            <button class="button button-positive button-block icon-left ion-ios-chatboxes">
+                                View Chat History
+                            </button>
+                            <button class="button button-dark button-block icon-left ion-android-microphone">
+                                Call ({{client.phone}})
+                            </button>
+                            <div class="list">
+                                <ion-toggle toggle-class="toggle-positive" ng-model="overrideTracking">Override Tracking</ion-toggle>
+                                <div class="item item-avatar" ng-repeat="item in trackingNumbers" ng-show="overrideTracking">
+                                    <img src="img/track.ico">
+                                    <h2>{{item.name}}: {{item.number}}</h2>
+                                    <p ng-show="item.storeNumber">Store Number: {{item.storeNumber}}</p>
+                                    <p>{{item.created_at}}</p>
+                                </div>
+                                <label class="item item-input" ng-show="overrideTracking">
+                                    <span class="input-label">Tracking Info</span>
+                                    <input type="text" placeholder="" ng-model="trackingNumber">
+                                </label>
+                            </div>
+                            <button class="button button-positive button-block icon-left ion-ios-cloud-upload" ng-click="moveToStep3(trackingNumber)">
+                                Update & Move To Step 3
+                            </button>
+                        </div>
+
+                        <div ng-show="authUser.type == 7" style="margin-top: 10px;">
+                            <div class="list">
+                                <div class="item item-icon-left">
+                                    <i class="icon ion-ios-calendar"></i>
+                                    Order Date
+                                    <span class="item-note">
+                                    {{order.created_at}}
+                                </span>
+                                </div>
+                                <div class="item item-text-wrap">
+                                    <p>Thank you for your patience, you will be notified shortly with Tracking Information.</p>
+                                </div>
+                                <ion-toggle toggle-class="toggle-positive" ng-model="viewInvoice">View Paid Invoice</ion-toggle>
+                                <div class="item" ng-show="viewInvoice">
+                                    <img class="full-image" src="{{tracker[1].invoice}}">
+                                </div>
+                            </div>
+                            <button class="button button-positive button-block icon-left ion-ios-chatboxes">
+                                View Chat History
+                            </button>
+                        </div>
+
+                        <div ng-show="authUser.type == 4" style="margin-top: 10px;">
+                            <div class="list">
+                                <div class="item item-icon-left">
+                                    <i class="icon ion-ios-calendar"></i>
+                                    Order Date
+                                    <span class="item-note">
+                                    {{order.created_at}}
+                                </span>
+                                </div>
+                                <ion-toggle toggle-class="toggle-positive" ng-model="showEnterTracking">Enter Tracking</ion-toggle>
+                                <div class="item item-divider" ng-show="showEnterTracking">
+                                    Tracking Update
+                                </div>
+                                <label class="item item-input" ng-show="showEnterTracking">
+                                    <span class="input-label">Tracking #</span>
+                                    <input type="text" placeholder="" ng-model="trackingNumber">
+                                </label>
+                            </div>
+                            <button class="button button-dark button-block icon-left ion-ios-cloud-upload" ng-click="updateTracking(trackingNumber)">
+                                Update Tracking
+                            </button>
+                            <button class="button button-positive button-block icon-left ion-ios-chatboxes">
+                                View Chat History
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li class="StepProgress-item" ng-class="order.step > 3 ? 'is-done' : (order.step == 3 ? 'current' : '')">
+                    <strong>Step 3</strong>
+                    <div ng-show="order.step == 3">
+                        <div ng-show="authUser.type == 7" style="margin-top: 10px;">
+                            <div class="list">
+                                <div class="item item-icon-left">
+                                    <i class="icon ion-ios-calendar"></i>
+                                    Order Date
+                                    <span class="item-note">
+                                    {{order.created_at}}
+                                </span>
+                                </div>
+                                <div class="item item-text-wrap">
+                                    <p>Thank you for your patience, you will be notified shortly with Tracking Information.</p>
+                                </div>
+                                <ion-toggle toggle-class="toggle-positive" ng-model="viewInvoice">View Paid Invoice</ion-toggle>
+                                <div class="item" ng-show="viewInvoice">
+                                    <img class="full-image" src="{{tracker[1].invoice}}">
+                                </div>
+                                <ion-toggle toggle-class="toggle-positive" ng-model="viewTracking">View Tracking</ion-toggle>
+                                <div class="item item-avatar" ng-repeat="item in trackingNumbers" ng-show="viewTracking">
+                                    <img src="img/track.ico">
+                                    <h2>{{item.name}}: {{item.number}}</h2>
+                                    <p ng-show="item.storeNumber">Store Number: {{item.storeNumber}}</p>
+                                    <p>{{item.created_at}}</p>
+                                </div>
+                                <ion-toggle toggle-class="toggle-positive" ng-model="viewInstall">View Install</ion-toggle>
+                            </div>
+                            <button class="button button-positive button-block icon-left ion-ios-chatboxes">
+                                View Chat History
+                            </button>
+                        </div>
+
+                        <div ng-show="authUser.type == 100 || authUser.type <= 3" style="margin-top: 10px;">
+                            <div class="list">
+                                <div class="item item-icon-left">
+                                    <i class="icon ion-ios-calendar"></i>
+                                    Order Date
+                                    <span class="item-note">
+                                        {{order.created_at}}
+                                    </span>
+                                </div>
+                            </div>
+                            <button class="button button-positive button-block icon-left ion-ios-chatboxes">
+                                View Chat History
+                            </button>
+                            <button class="button button-dark button-block icon-left ion-android-microphone">
+                                Call ({{client.phone}})
+                            </button>
+                            <div class="list">
+                                <ion-toggle toggle-class="toggle-positive" ng-model="viewInvoice">View Paid Invoice</ion-toggle>
+                                <div class="item" ng-show="viewInvoice">
+                                    <img class="full-image" src="{{tracker[1].invoice}}">
+                                </div>
+                                <ion-toggle toggle-class="toggle-positive" ng-model="viewTracking">View Tracking</ion-toggle>
+                                <div class="item item-avatar" ng-repeat="item in trackingNumbers" ng-show="viewTracking">
+                                    <img src="img/track.ico">
+                                    <h2>{{item.name}}: {{item.number}}</h2>
+                                    <p ng-show="item.storeNumber">Store Number: {{item.storeNumber}}</p>
+                                    <p>{{item.created_at}}</p>
+                                </div>
+                                <div class="item item-divider">
+                                    Installation Company
+                                </div>
+                                <label class="item item-input">
+                                    <span class="input-label">Company Name</span>
+                                    <input type="text" placeholder="" ng-model="installation_company.company_name">
+                                </label>
+                                <label class="item item-input">
+                                    <span class="input-label">Technician Name</span>
+                                    <input type="text" placeholder="" ng-model="installation_company.technician_name">
+                                </label>
+                                <label class="item item-input">
+                                    <span class="input-label">Technician Phone</span>
+                                    <input type="text" placeholder="(XXX) XXX-XXXX" ui-mask="(999) 999-9999" ng-model="installation_company.technician_phone">
+                                </label>
+                                <label class="item item-input">
+                                    <span class="input-label">Installation Date</span>
+                                    <input type="text" placeholder="" ng-model="installation_company.date">
+                                </label>
+                                <button ng-click="showDatePicker()" class="button button-block picker-button"> </button>
+                                <label class="item item-input">
+                                    <span class="input-label">Installation Time</span>
+                                    <input type="text" placeholder="" ng-model="installation_company.time">
+                                </label>
+                                <button ng-click="showTimePicker()" class="button button-block picker-button"> </button>
+                            </div>
+                            <button class="button button-positive button-block icon-left ion-ios-cloud-upload" ng-click="moveToStep4()">
+                                Submit
+                            </button>
+                        </div>
+
+                        <div ng-show="authUser.type == 4" style="margin-top: 10px;">
+                            <div class="list">
+                                <div class="item item-icon-left">
+                                    <i class="icon ion-ios-calendar"></i>
+                                    Order Date
+                                    <span class="item-note">
+                                    {{order.created_at}}
+                                </span>
+                                </div>
+                                <label class="item item-input">
+                                    <span class="input-label">Tracking #</span>
+                                    <input type="text" placeholder="" ng-model="trackingNumber" readonly>
+                                </label>
+                                <div class="item item-text-wrap">
+                                    This order has been shipped & received
+                                </div>
+                            </div>
+                            <button class="button button-positive button-block icon-left ion-ios-chatboxes">
+                                View Chat History
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li class="StepProgress-item" ng-class="order.step > 4 ? 'is-done' : (order.step == 4 ? 'current' : '')">
+                    <strong>Step 4</strong>
+                </li>
+                <li class="StepProgress-item" ng-class="order.step > 5 ? 'is-done' : (order.step == 5 ? 'current' : '')">
+                    <strong>Step 5</strong>
+                </li>
+            </ul>
+        </div>
+
+        <div class="list card" id="orderDetail-card25">
+            <ion-item class="item-avatar item-icon-right" id="orderDetail-list-item21">
+                <img src="http://nex-gen-flooring.com/webapp-images/forklift.jpg">
+                <h2>Order Profile</h2>
+                <p>Order #: {{order.$id}} </p>
+                <i class="icon ion-android-checkbox"></i>
+            </ion-item>
+            <!--<div id="orderDetail-button-bar5" class="button-bar">-->
+                <!--<button id="orderDetail-button31"-->
+                        <!--class="button button-stable button-small button-block icon-left ion-toggle-filled">Edit This-->
+                    <!--Order-->
+                <!--</button>-->
+            <!--</div>-->
+            <form id="orderDetail-form20" class="list">
+                <ion-toggle toggle-class="toggle-positive" ng-model="isSameInstallation">Installation Address is same with delivery</ion-toggle>
+                <label class="item item-input">
+                    <span class="input-label">Delivery Address</span>
+                    <input type="text" placeholder="" ng-model="order.delivery_address" readonly>
+                </label>
+                <label class="item item-input" ng-show="!isSameInstallation">
+                    <span class="input-label">Installation Address</span>
+                    <input type="text" placeholder="" ng-model="order.installation_address" readonly>
+                </label>
+              
+                <ion-toggle toggle-class="toggle-positive" ng-model="showInstaller" id="orderDetail-toggle12">Installer / Contractor</ion-toggle>
+                <label class="item item-input" id="addClient-input8" ng-show="showInstaller">
+                    <span class="input-label">Company Name</span>
+                    <input type="text" placeholder="" ng-model="order.company_name" readonly>
+                </label>
+                <label class="item item-input" ng-show="showInstaller">
+                    <span class="input-label">Technician Name</span>
+                    <input type="text" placeholder="" ng-model="order.technician_name" readonly>
+                </label>
+                <label class="item item-input" id="addClient-input10" ng-show="showInstaller">
+                    <span class="input-label">Technician Phone</span>
+                    <input type="text" placeholder="(XXX) XXX-XXXX" ui-mask="(999) 999-9999" ng-model="order.technician_phone" readonly>
+                </label>
+                <label class="item item-input" id="addClient-input9" ng-show="showInstaller">
+                    <span class="input-label">Installation Date</span>
+                    <input type="text" placeholder="" ng-model="order.installation_date" readonly>
+                </label>
+                <label class="item item-input" ng-show="showInstaller">
+                    <span class="input-label">Installation Time</span>
+                    <input type="text" placeholder="" ng-model="order.installation_time" readonly>
+                </label>
+              
+                <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="item in products">
+                    <img src="{{item.photos[0]}}">
+                    <h2>{{item.name}}</h2>
+                    <p>Cost: ${{item.cost}}, Price: ${{(item.cost * 1) + (item.cost * 1) * (item.markup * 1) / 100}}, Qty: {{client.products[item.$id]}}</p>
+                    <p>
+                        <label class="{{item.is_available ? 'label-available' : 'label-unavailable'}}">
+                            {{item.is_available ? 'Available' : 'Unavailable'}}
+                        </label>
+                    </p>
+                </ion-item>
+            </form>
+
+            <div class="spacer" style="height: 48px;"></div>
+            <div id="productIst-button-bar23" class="button-bar">
+                <button id="productIst-button29" ng-click="sendEmail()"
+                        class="button button-positive  button-block icon ion-email">&nbsp; Email
+                </button>
+                <button id="productIst-button30" ng-click="downloadPDF()"
+                        class="button button-positive  button-block icon ion-android-download">&nbsp; PDF
+                </button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

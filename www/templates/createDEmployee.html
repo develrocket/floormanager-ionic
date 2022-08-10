@@ -1,0 +1,32 @@
+<ion-view title="Create Employee" id="page19">
+    <ion-nav-buttons side="right" class="has-header">
+        <button class="button button-icon icon No Icon"> Cancel</button>
+    </ion-nav-buttons>
+    <ion-content padding="true" class="has-header">
+        <form id="createEmployee-form28" class="list">
+            <label class="item item-input" id="createEmployee-input29">
+                <span class="input-label">Name</span>
+                <input type="text" placeholder="" ng-model="employee.name">
+            </label>
+            <label class="item item-input" id="createEmployee-input30">
+                <span class="input-label">Email</span>
+                <input type="text" placeholder="" ng-model="employee.email">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Password</span>
+                <input type="password" placeholder="" ng-model="employee.password">
+            </label>
+            <label class="item item-input" id="createEmployee-input31">
+                <span class="input-label">Phone</span>
+                <input type="text" placeholder="(XXX) XXX-XXXX" ui-mask="(999) 999-9999" ng-model="employee.phone">
+            </label>
+            <label class="item item-input" id="createEmployee-input32">
+                <span class="input-label">Address #</span>
+                <input type="text" placeholder="" ng-model="employee.address">
+            </label>
+        </form>
+        <button id="createEmployee-button34" ng-click="saveEmployee()" class="button button-positive  button-block">
+            Save
+        </button>
+    </ion-content>
+</ion-view>

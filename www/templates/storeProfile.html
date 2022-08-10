@@ -1,0 +1,106 @@
+<ion-view title="StoreProfile" id="page12">
+    <ion-content padding="true" class="has-header">
+        <div class="list card" id="storeProfile-card23">
+            <ion-item class="item-avatar" id="storeProfile-list-item13">
+                <img src="{{store.photo}}">
+                <h2>{{store.name}}</h2>
+                <p>ID:{{store.$id}}</p>
+            </ion-item>
+            <button class="button button-positive button-block icon-left ion-ios-camera" ng-click="updateStorePicture()">Update Store Picture</button>
+
+            <form id="storeProfile-form14" class="list">
+                <ion-toggle toggle-class="toggle-positive" id="storeProfile-toggle7" ng-model="showContact">Contact
+                    Info
+                </ion-toggle>
+                <label class="item item-input" id="storeProfile-input18" ng-show="showContact">
+                    <span class="input-label">Phone #</span>
+                    <input type="text" placeholder="(XXX) XXX-XXXX" ng-model="store.phone">
+                </label>
+                <label class="item item-input" id="storeProfile-input19" ng-show="showContact">
+                    <span class="input-label">Address:</span>
+                    <input type="text" placeholder="777 Heaven Way" ng-model="store.address">
+                </label>
+                <label class="item item-input" id="storeProfile-input20" ng-show="showContact">
+                    <span class="input-label">City:</span>
+                    <input type="text" placeholder="CIty" ng-model="store.city">
+                </label>
+                <label class="item item-input" id="storeProfile-input21" ng-show="showContact">
+                    <span class="input-label">State:</span>
+                    <input type="text" placeholder="State" ng-model="store.state">
+                </label>
+                <label class="item item-input" id="storeProfile-input22" ng-show="showContact">
+                    <span class="input-label">Zip:</span>
+                    <input type="text" placeholder="XXXXX" ng-model="store.zip">
+                </label>
+                <div class="spacer" style="width: 300px; height: 16px;"></div>
+            </form>
+            <ion-list>
+                <!--<ion-toggle toggle-class="toggle-positive" id="storeProfile-toggle8" ng-model="showEmployee">Employees-->
+                <!--</ion-toggle>-->
+                <!--<ion-item class="item-avatar item-icon-right" id="storeProfile-list-item23"-->
+                          <!--ng-repeat="item in employees track by $index" ng-show="showEmployee">-->
+                    <!--<img src="img/thumbnail-img.png">-->
+                    <!--<h2>{{item.name}}</h2>-->
+                    <!--<p>Email: {{item.email}}</p>-->
+                    <!--<i class="icon ion-ios-telephone"></i>-->
+                <!--</ion-item>-->
+                <!--<div class="spacer" style="width: 300px; height: 30px;"></div>-->
+                <ion-toggle toggle-class="toggle-positive" ng-model="showUsers">Employees
+                </ion-toggle>
+                <ion-item class="item-avatar item-icon-right"
+                          ng-repeat="item in users track by $index" ng-show="showUsers">
+                    <img src="img/thumbnail-img.png">
+                    <h2>{{item.name}} ({{item.type}})</h2>
+                    <p>Email: {{item.email}}</p>
+                    <ion-option-button class="button-assertive" ng-click="removeEmployee($index)">Delete</ion-option-button>
+                </ion-item>
+                <div id="createNewStore-button-bar24" ng-show="showUsers" class="button-bar">
+                    <a ui-sref="menu.employees({storeId: store.$id})" id="createNewStore-button26"
+                       class="button button-positive  button-block icon-left ion-android-add-circle">Add</a>
+                </div>
+                <div class="spacer" style="width: 300px; height: 30px;"></div>
+                <ion-item class="item-divider" id="storeProfile-list-item-divider5"> Store Product LIst</ion-item>
+                <ion-item class="item-avatar" id="storeProfile-list-item24" ui-sref="menu.localStoreInventory({key: store.$id})">
+                    <img src="img/thumbnail-img.png">
+                    <h2>Entire Store Inventory</h2>
+                    <p>Click To View</p>
+                </ion-item>
+                <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="item in products"
+                          ui-sref="menu.productDetail({key: item.$id})">
+                    <img src="{{item.photos[0]}}">
+                    <h2>{{item.name}}</h2>
+                    <p>Cost: ${{item.cost}}, Price: ${{(item.cost * 1) + (item.cost * 1) * (item.markup * 1) / 100}}</p>
+                    <p>
+                        <label class="{{item.is_available ? 'label-available' : 'label-unavailable'}}">{{item.is_available
+                            ? 'Available' : 'Unavailable'}}</label>
+                    </p>
+                    <i class="icon ion-chevron-right"></i>
+                </ion-item>
+                <div>
+                    <button class="button button-balanced button-block" ui-sref="menu.userList({key: store.$id})">Associate Employee</button>
+                </div>
+                <div id="storeProfile-button-bar8" class="button-bar">
+                    <button id="storeProfile-button45"
+                            ng-click="printList()"
+                            style="margin: 0px;"
+                            class="button button-positive  button-block icon-left ion-android-list">Print List
+                    </button>
+                    <button id="storeProfile-button47"
+                            ng-click="printQR()"
+                            style="margin: 0px;"
+                            class="button button-positive  button-block icon-left ion-qr-scanner">Print QR's
+                    </button>
+                </div>
+                <div id="productIst-button-bar23" class="button-bar">
+                    <button id="productIst-button29" ng-click="sendEmail()"
+                            class="button button-positive  button-block icon ion-email">&nbsp; Email
+                    </button>
+                    <button id="productIst-button30" ng-click="downloadPDF()"
+                            class="button button-positive  button-block icon ion-android-download">&nbsp; PDF
+                    </button>
+                </div>
+                <div class="spacer" style="height: 100px;"></div>
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-view>

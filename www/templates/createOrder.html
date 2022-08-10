@@ -1,0 +1,90 @@
+<ion-view title="{{client.name}}" id="page13">
+    <ion-content padding="true" class="has-header">
+        <ion-list id="orderDetail-list9">
+            <ion-item class="item-avatar">
+                <img src="img/TRjIh5RTXOIXnGdRizDg_images.png">
+                <h2>{{client.name}}</h2>
+                <p>
+                    <i class="icon ion-email"></i>&nbsp; {{client.email}}</p>
+                <p>
+                    <i class="icon ion-ios-telephone"></i>&nbsp; {{client.phone}}
+                </p>
+            </ion-item>
+        </ion-list>
+        <div class="spacer" style="width: 300px; height: 27px;"></div>
+        <div class="list card" id="orderDetail-card25">
+            <ion-item class="item-avatar item-icon-right" id="orderDetail-list-item21">
+                <img src="img/customer_order_status.PNG">
+                <h2>Order Profile</h2>
+                <p>Order #: </p>
+                <i class="icon ion-android-checkbox"></i>
+            </ion-item>
+            <div id="orderDetail-button-bar5" class="button-bar">
+                <button id="orderDetail-button31"
+                        class="button button-stable button-small button-block icon-left ion-toggle-filled">Edit This
+                    Order
+                </button>
+            </div>
+            <form id="orderDetail-form20" class="list">
+                <ion-toggle toggle-class="toggle-positive" ng-model="isSameInstallation" ng-change="updateInstallationValue(isSameInstallation)">Installation Address is same with delivery</ion-toggle>
+                <label class="item item-input">
+                    <span class="input-label">Delivery Address</span>
+                    <input type="text" placeholder="" ng-model="order.delivery_address">
+                </label>
+                <label class="item item-input" ng-show="!isSameInstallation">
+                    <span class="input-label">Installation Address</span>
+                    <input type="text" placeholder="" ng-model="order.installation_address">
+                </label>
+                <p class="description">
+                    Delivery Notes
+                </p>
+                <ion-toggle toggle-class="toggle-positive" ng-model="showInstaller">Installer / Contractor</ion-toggle>
+                <label class="item item-input" id="addClient-input8" ng-show="showInstaller">
+                    <span class="input-label">Company Name</span>
+                    <input type="text" placeholder="" ng-model="order.company_name">
+                </label>
+                <label class="item item-input" id="addClient-input9" ng-show="showInstaller">
+                    <span class="input-label">Technician Name</span>
+                    <input type="text" placeholder="" ng-model="order.technician_name">
+                </label>
+                <label class="item item-input" id="addClient-input10" ng-show="showInstaller">
+                    <span class="input-label">Technician Phone</span>
+                    <input type="text" placeholder="(XXX) XXX-XXXX" ui-mask="(999) 999-9999" ng-model="order.technician_phone">
+                </label>
+                <label class="item item-input" ng-show="showInstaller">
+                    <span class="input-label">Installation Date</span>
+                    <input type="text" placeholder="" ng-model="order.installation_date">
+                </label>
+                <button ng-click="showDatePicker()" class="button button-block picker-button" ng-show="showInstaller"> </button>
+                <label class="item item-input" ng-show="showInstaller">
+                    <span class="input-label">Installation Time</span>
+                    <input type="text" placeholder="" ng-model="order.installation_time">
+                </label>
+                <button ng-click="showTimePicker()" class="button button-block picker-button" ng-show="showInstaller"> </button>
+                <p class="description">
+                    Installer Contractor Notes
+                </p>
+                <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="item in products">
+                    <img src="{{item.photos[0]}}">
+                    <h2>{{item.name}}</h2>
+                    <p>Cost: ${{item.cost}}, Price: ${{(item.cost * 1) + (item.cost * 1) * (item.markup * 1) / 100}}, Qty: {{client.products[item.$id]}}</p>
+                    <p>
+                        <label class="{{item.is_available ? 'label-available' : 'label-unavailable'}}">
+                            {{item.is_available ? 'Available' : 'Unavailable'}}
+                        </label>
+                    </p>
+                </ion-item>
+            </form>
+            <form id="orderDetail-form22" class="list">
+                <ion-toggle toggle-class="toggle-positive" id="orderDetail-toggle13">Edit History</ion-toggle>
+            </form>
+            <p class="description">
+                Edit History Data
+            </p>
+            <div class="spacer" style="height: 100px;"></div>
+            <div>
+                <button class="button button-block button-positive" ng-click="createOrder()">Generate Order</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

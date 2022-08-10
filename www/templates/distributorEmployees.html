@@ -1,0 +1,21 @@
+<ion-view title="Employees" id="distributor_employees_list">
+    <ion-nav-buttons side="right" class="has-header">
+        <button class="button button-icon icon No Icon" ng-click="selectEmployees()"> Select</button>
+    </ion-nav-buttons>
+    <ion-content padding="true" class="has-header">
+        <form id="employees-form32" class="list">
+            <label class="item item-input" id="employees-search3">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="search" placeholder="">
+            </label>
+            <ion-item class="item-avatar item-icon-right" ng-repeat="item in employees" ng-click="chooseItem(item)">
+                <img src="img/TRjIh5RTXOIXnGdRizDg_images.png">
+                <h2>{{item.name}}</h2>
+                <p>{{ item.email }}</p>
+                <i class="icon ion-ios-checkmark-empty" ng-show="item.is_selected"></i>
+            </ion-item>
+        </form>
+        <a ui-sref="menu.createDEmployee" id="employees-button43" class="button button-positive  button-block">Add New
+            Employee</a>
+    </ion-content>
+</ion-view>

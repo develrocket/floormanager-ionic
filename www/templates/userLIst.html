@@ -1,0 +1,30 @@
+<ion-view title="User List" id="page8">
+    <ion-nav-bar class="bar-energized">
+        <ion-nav-back-button class="button-icon ion-android-arrow-back">
+        </ion-nav-back-button>
+        <ion-nav-buttons side="right">
+            <button class="button" ng-click="associateUsers()">
+                Associate
+            </button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content padding="true" class="has-header">
+        <div id="productIst-container5">
+            <form id="productIst-form12" class="list">
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="search" placeholder="" ng-model="searchText" ng-change="updateSearchText(searchText)">
+                </label>
+            </form>
+        </div>
+        <div class="spacer" style="width: 300px; height: 13px;"></div>
+        <ion-list id="productIst-list5">
+            <ion-item class="item-avatar item-icon-right" ng-repeat="item in results" ng-click="selectUser(item)">
+                <img src="img/thumbnail-img.png">
+                <h2>{{item.name}} ({{item.type}})</h2>
+                <p>Email: {{item.email}}</p>
+                <i class="icon ion-ios-checkmark-empty" ng-show="item.selected"></i>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
